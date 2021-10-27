@@ -3,6 +3,7 @@ import 'package:food_app/screens/number/number.dart';
 import 'package:food_app/screens/onboarding/onboarding.dart';
 import 'package:food_app/screens/sign%20in/sign_in.dart';
 import 'package:food_app/screens/splash/splash.dart';
+import 'package:food_app/screens/verification/verification.dart';
 import 'package:food_app/utils/size_config.dart';
 
 void main() {
@@ -36,12 +37,13 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.white,
               elevation: 0.0)),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/number',
+      initialRoute: '/verification',
       routes: {
         '/': (context) => Splash(),
         '/onboarding': (context) => Onboarding(),
         '/signin': (context) => SignIn(),
         '/number': (context) => Number(),
+        '/verification': (context) => Verification(),
       },
     );
   }
