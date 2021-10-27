@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:food_app/screens/number/number.dart';
 import 'package:food_app/screens/onboarding/onboarding.dart';
+import 'package:food_app/screens/select%20location/select_location.dart';
 import 'package:food_app/screens/sign%20in/sign_in.dart';
 import 'package:food_app/screens/splash/splash.dart';
 import 'package:food_app/screens/verification/verification.dart';
@@ -37,13 +38,14 @@ class MyApp extends StatelessWidget {
               backgroundColor: Colors.white,
               elevation: 0.0)),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/verification',
+      initialRoute: '/selectlocation',
       routes: {
         '/': (context) => Splash(),
         '/onboarding': (context) => Onboarding(),
         '/signin': (context) => SignIn(),
         '/number': (context) => Number(),
         '/verification': (context) => Verification(),
+        '/selectlocation': (context) => SelectLocation(),
       },
     );
   }
