@@ -24,6 +24,7 @@ class _SignInState extends State<SignIn> {
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: SingleChildScrollView(
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 SizedBox(
                   height: getProportionateScreenHeight(380.63),
