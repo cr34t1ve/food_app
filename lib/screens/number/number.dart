@@ -27,7 +27,9 @@ class _NumberState extends State<Number> {
       ),
       appBar: AppBar(
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: Icon(
             Icons.chevron_left,
             size: 35,
