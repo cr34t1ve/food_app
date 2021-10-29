@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_app/enum/constants.dart';
 import 'package:food_app/utils/size_config.dart';
 
 class SelectLocation extends StatefulWidget {
@@ -10,6 +11,8 @@ class SelectLocation extends StatefulWidget {
 }
 
 class _SelectLocationState extends State<SelectLocation> {
+  String? _currentSelectedValue;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +33,7 @@ class _SelectLocationState extends State<SelectLocation> {
         child: Column(
           children: [
             SizedBox(
-              height: getProportionateScreenHeight(44.0),
+              height: getProportionateScreenHeight(24.0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -100,6 +103,77 @@ class _SelectLocationState extends State<SelectLocation> {
                       fontWeight: FontWeight.w600),
                 )
               ],
+            ),
+            SizedBox(
+              height: getProportionateScreenHeight(10.0),
+            ),
+            DropdownButton(
+              style: TextStyle(color: Color(0xFF181725), fontSize: 18),
+              isExpanded: true,
+              elevation: 0,
+              hint: Text(
+                'Zone of residence',
+                style: TextStyle(fontSize: 18, color: Color(0xFFB1B1B1)),
+              ),
+              icon: Icon(Icons.keyboard_arrow_down_sharp),
+              value: _currentSelectedValue,
+              onChanged: (String? newValue) {
+                setState(() {
+                  _currentSelectedValue = newValue!;
+                  // state.didChange(newValue);
+                });
+              },
+              items: zones.map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
+            ),
+            SizedBox(
+              height: getProportionateScreenHeight(30.0),
+            ),
+            //
+            //
+            //Area drop down
+            //
+            //
+            Row(
+              children: [
+                Text(
+                  'Your Area',
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF7C7C7C),
+                      fontWeight: FontWeight.w600),
+                )
+              ],
+            ),
+            SizedBox(
+              height: getProportionateScreenHeight(10.0),
+            ),
+            DropdownButton(
+              style: TextStyle(color: Color(0xFF181725), fontSize: 18),
+              isExpanded: true,
+              elevation: 0,
+              hint: Text(
+                'Types of your area',
+                style: TextStyle(fontSize: 18, color: Color(0xFFB1B1B1)),
+              ),
+              icon: Icon(Icons.keyboard_arrow_down_sharp),
+              value: _currentSelectedValue,
+              onChanged: (String? newValue) {
+                setState(() {
+                  _currentSelectedValue = newValue!;
+                  // state.didChange(newValue);
+                });
+              },
+              items: zoneTypes.map((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList(),
             )
           ],
         ),
