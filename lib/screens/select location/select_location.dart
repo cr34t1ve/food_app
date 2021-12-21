@@ -11,7 +11,8 @@ class SelectLocation extends StatefulWidget {
 }
 
 class _SelectLocationState extends State<SelectLocation> {
-  String? _currentSelectedValue;
+  String? _currentZoneSelectedValue;
+  String? _currentAreaSelectedValue;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class _SelectLocationState extends State<SelectLocation> {
         child: Column(
           children: [
             SizedBox(
-              height: getProportionateScreenHeight(24.0),
+              height: getProportionateScreenHeight(14.0),
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -68,9 +69,7 @@ class _SelectLocationState extends State<SelectLocation> {
               children: [
                 Text(
                   'Select Your Location',
-                  style: TextStyle(
-                      fontSize: getProportionateScreenWidth(26.0),
-                      fontWeight: FontWeight.w600),
+                  style: Theme.of(context).textTheme.headline1,
                 )
               ],
             ),
@@ -97,10 +96,7 @@ class _SelectLocationState extends State<SelectLocation> {
               children: [
                 Text(
                   'Your Zone',
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Color(0xFF7C7C7C),
-                      fontWeight: FontWeight.w600),
+                  style: Theme.of(context).textTheme.bodyText1,
                 )
               ],
             ),
@@ -108,18 +104,25 @@ class _SelectLocationState extends State<SelectLocation> {
               height: getProportionateScreenHeight(10.0),
             ),
             DropdownButton(
-              style: TextStyle(color: Color(0xFF181725), fontSize: 18),
+              style: TextStyle(
+                  color: Color(0xFF181725),
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400),
               isExpanded: true,
               elevation: 0,
               hint: Text(
                 'Zone of residence',
-                style: TextStyle(fontSize: 18, color: Color(0xFFB1B1B1)),
+                style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xFFB1B1B1),
+                    letterSpacing: 0),
               ),
               icon: Icon(Icons.keyboard_arrow_down_sharp),
-              value: _currentSelectedValue,
+              value: _currentZoneSelectedValue,
               onChanged: (String? newValue) {
                 setState(() {
-                  _currentSelectedValue = newValue!;
+                  _currentZoneSelectedValue = newValue!;
                   // state.didChange(newValue);
                 });
               },
@@ -131,7 +134,7 @@ class _SelectLocationState extends State<SelectLocation> {
               }).toList(),
             ),
             SizedBox(
-              height: getProportionateScreenHeight(30.0),
+              height: getProportionateScreenHeight(20.0),
             ),
             //
             //
@@ -142,10 +145,7 @@ class _SelectLocationState extends State<SelectLocation> {
               children: [
                 Text(
                   'Your Area',
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Color(0xFF7C7C7C),
-                      fontWeight: FontWeight.w600),
+                  style: Theme.of(context).textTheme.bodyText1
                 )
               ],
             ),
@@ -153,18 +153,25 @@ class _SelectLocationState extends State<SelectLocation> {
               height: getProportionateScreenHeight(10.0),
             ),
             DropdownButton(
-              style: TextStyle(color: Color(0xFF181725), fontSize: 18),
+              style: TextStyle(
+                color: Color(0xFF181725),
+                fontSize: 18,
+              ),
               isExpanded: true,
               elevation: 0,
               hint: Text(
                 'Types of your area',
-                style: TextStyle(fontSize: 18, color: Color(0xFFB1B1B1)),
+                style: TextStyle(
+                    fontSize: 18,
+                    color: Color(0xFFB1B1B1),
+                    fontWeight: FontWeight.w400,
+                    letterSpacing: 0),
               ),
               icon: Icon(Icons.keyboard_arrow_down_sharp),
-              value: _currentSelectedValue,
+              value: _currentAreaSelectedValue,
               onChanged: (String? newValue) {
                 setState(() {
-                  _currentSelectedValue = newValue!;
+                  _currentAreaSelectedValue = newValue!;
                   // state.didChange(newValue);
                 });
               },
@@ -174,7 +181,14 @@ class _SelectLocationState extends State<SelectLocation> {
                   child: Text(value),
                 );
               }).toList(),
-            )
+            ),
+            SizedBox(
+              height: getProportionateScreenHeight(40.0),
+            ),
+            SizedBox(
+                height: getProportionateScreenHeight(67.0),
+                width: double.infinity,
+                child: TextButton(onPressed: () {}, child: Text('Submit')))
           ],
         ),
       ),

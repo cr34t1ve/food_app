@@ -36,9 +36,27 @@ class MyApp extends StatelessWidget {
           appBarTheme: AppBarTheme(
               brightness: Brightness.light,
               backgroundColor: Colors.white,
-              elevation: 0.0)),
+              elevation: 0.0),
+          textButtonTheme: TextButtonThemeData(
+              style: TextButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  primary: Colors.white,
+                  backgroundColor: Color(0xFF53B175),
+                  textStyle: TextStyle(
+                      fontSize: getProportionateScreenWidth(16),
+                      fontWeight: FontWeight.w400))),
+          textTheme: TextTheme(
+              headline1: TextStyle(
+                  fontSize: 26.0,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF181725)),
+              bodyText1: TextStyle(
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF7C7C7C)))),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/selectlocation',
+      initialRoute: '/number',
       routes: {
         '/': (context) => Splash(),
         '/onboarding': (context) => Onboarding(),

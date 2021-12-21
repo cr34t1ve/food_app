@@ -25,16 +25,21 @@ class _VerificationState extends State<Verification> {
                   fontWeight: FontWeight.w600),
             ),
           ),
-          Container(
-            width: getProportionateScreenWidth(67.0),
-            height: getProportionateScreenHeight(67.0),
-            decoration:
-                BoxDecoration(shape: BoxShape.circle, color: Color(0xFF53B175)),
-            child: Center(
-              child: Icon(
-                Icons.chevron_right,
-                color: Colors.white,
-                size: 45,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/selectlocation');
+            },
+            child: Container(
+              width: getProportionateScreenWidth(67.0),
+              height: getProportionateScreenHeight(67.0),
+              decoration: BoxDecoration(
+                  shape: BoxShape.circle, color: Color(0xFF53B175)),
+              child: Center(
+                child: Icon(
+                  Icons.chevron_right,
+                  color: Colors.white,
+                  size: 45,
+                ),
               ),
             ),
           ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_app/components/button.dart';
 import 'package:food_app/utils/size_config.dart';
 
 class Onboarding extends StatelessWidget {
@@ -44,26 +45,7 @@ class Onboarding extends StatelessWidget {
               SizedBox(
                 height: getProportionateScreenHeight(40.88),
               ),
-              Container(
-                decoration: BoxDecoration(),
-                width: double.infinity,
-                child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(19),
-                    ),
-                    height: getProportionateScreenHeight(67.0),
-                    color: Color(0xFF53B175),
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/signin');
-                    },
-                    child: Text(
-                      'Get Started',
-                      style: TextStyle(
-                          color: Color(0xFFFFF9FF),
-                          fontSize: 18.0,
-                          fontWeight: FontWeight.w600),
-                    )),
-              ),
+              DefaultButton(),
               SizedBox(
                 height: 90.0,
               )
@@ -74,3 +56,4 @@ class Onboarding extends StatelessWidget {
     );
   }
 }
+

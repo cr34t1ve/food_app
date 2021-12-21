@@ -12,16 +12,21 @@ class _NumberState extends State<Number> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: Container(
-        width: getProportionateScreenWidth(67.0),
-        height: getProportionateScreenHeight(67.0),
-        decoration:
-            BoxDecoration(shape: BoxShape.circle, color: Color(0xFF53B175)),
-        child: Center(
-          child: Icon(
-            Icons.chevron_right,
-            color: Colors.white,
-            size: 45,
+      floatingActionButton: GestureDetector(
+        onTap: () {
+          Navigator.pushNamed(context, '/verification');
+        },
+        child: Container(
+          width: getProportionateScreenWidth(67.0),
+          height: getProportionateScreenHeight(67.0),
+          decoration:
+              BoxDecoration(shape: BoxShape.circle, color: Color(0xFF53B175)),
+          child: Center(
+            child: Icon(
+              Icons.chevron_right,
+              color: Colors.white,
+              size: 45,
+            ),
           ),
         ),
       ),
