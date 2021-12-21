@@ -49,7 +49,7 @@ class MyApp extends StatelessWidget {
                       fontWeight: FontWeight.w400))),
           textTheme: TextTheme(
               headline1: TextStyle(
-                  fontSize: getProportionateScreenHeight(26.0),
+                  fontSize: getProportionateScreenWidth(26.0),
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF181725)),
               headline4: TextStyle(
@@ -62,7 +62,7 @@ class MyApp extends StatelessWidget {
                   color: Color(0xFF7C7C7C)),
               subtitle1: TextStyle(
                   fontSize: getProportionateScreenWidth(14),
-                  fontWeight: FontWeight.w500,
+                  fontWeight: FontWeight.w600,
                   color: Color(0xFF181725)))),
       debugShowCheckedModeBanner: false,
       initialRoute: '/login',

@@ -101,6 +101,21 @@ class _LoginState extends State<Login> {
                           : Icons.remove_red_eye_outlined),
                     )),
               ),
+              SizedBox(
+                height: getProportionateScreenHeight(20.0),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Text(
+                    'Forgot Password?',
+                    style: Theme.of(context).textTheme.subtitle1,
+                  )
+                ],
+              ),
+              SizedBox(
+                height: getProportionateScreenHeight(30.0),
+              ),
             ],
           ),
         ),
