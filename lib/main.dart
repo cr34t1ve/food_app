@@ -49,13 +49,21 @@ class MyApp extends StatelessWidget {
                       fontWeight: FontWeight.w400))),
           textTheme: TextTheme(
               headline1: TextStyle(
-                  fontSize: 26.0,
+                  fontSize: getProportionateScreenHeight(26.0),
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF181725)),
+              headline4: TextStyle(
+                  fontSize: getProportionateScreenWidth(16.0),
+                  fontWeight: FontWeight.w700,
+                  color: Color(0xFF7C7C7C)),
               bodyText1: TextStyle(
-                  fontSize: 16.0,
+                  fontSize: getProportionateScreenWidth(16.0),
                   fontWeight: FontWeight.w600,
-                  color: Color(0xFF7C7C7C)))),
+                  color: Color(0xFF7C7C7C)),
+              subtitle1: TextStyle(
+                  fontSize: getProportionateScreenWidth(14),
+                  fontWeight: FontWeight.w500,
+                  color: Color(0xFF181725)))),
       debugShowCheckedModeBanner: false,
       initialRoute: '/login',
       routes: {
