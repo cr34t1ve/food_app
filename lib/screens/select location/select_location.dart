@@ -143,10 +143,7 @@ class _SelectLocationState extends State<SelectLocation> {
             //
             Row(
               children: [
-                Text(
-                  'Your Area',
-                  style: Theme.of(context).textTheme.bodyText1
-                )
+                Text('Your Area', style: Theme.of(context).textTheme.bodyText1)
               ],
             ),
             SizedBox(
@@ -188,7 +185,11 @@ class _SelectLocationState extends State<SelectLocation> {
             SizedBox(
                 height: getProportionateScreenHeight(67.0),
                 width: double.infinity,
-                child: TextButton(onPressed: () {}, child: Text('Submit')))
+                child: TextButton(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/login');
+                    },
+                    child: Text('Submit')))
           ],
         ),
       ),
