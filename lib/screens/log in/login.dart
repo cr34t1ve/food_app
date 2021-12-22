@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:food_app/components/button.dart';
 import 'package:food_app/utils/size_config.dart';
 
 class Login extends StatefulWidget {
@@ -49,7 +50,7 @@ class _LoginState extends State<Login> {
               Row(
                 children: [
                   Text(
-                    'Enter your emails and password',
+                    'Enter your email and password',
                     style: Theme.of(context).textTheme.bodyText1,
                   )
                 ],
@@ -87,7 +88,7 @@ class _LoginState extends State<Login> {
                 obscureText: isVisible,
                 decoration: InputDecoration(
                     border: UnderlineInputBorder(),
-                    hintText: 'imshuvo97@gmail.com',
+                    hintText: '. . . . . . . .',
                     hintStyle: Theme.of(context).textTheme.bodyText1,
                     suffixIcon: IconButton(
                       onPressed: () {
@@ -115,6 +116,43 @@ class _LoginState extends State<Login> {
               ),
               SizedBox(
                 height: getProportionateScreenHeight(30.0),
+              ),
+              DefaultButton(
+                text: 'Log In',
+                press: () {
+                  Navigator.pushNamed(context, '/home');
+                },
+              ),
+              SizedBox(
+                height: getProportionateScreenHeight(25.0),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      // Note: Styles for TextSpans must be explicitly defined.
+                      // Child text spans will inherit styles from parent
+                      style: TextStyle(
+                          fontFamily: 'Gilroy',
+                          fontWeight: FontWeight.w600,
+                          fontSize: 14,
+                          color: Color(0xFF181725)),
+                      children: <TextSpan>[
+                        TextSpan(text: "Don't have an account? "),
+                        TextSpan(
+                          text: 'Sign Up',
+                          style: TextStyle(
+                              fontFamily: 'Gilroy',
+                              fontWeight: FontWeight.w600,
+                              fontSize: 14,
+                              color: Color(0xFF53B175)),
+                        )
+                      ],
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

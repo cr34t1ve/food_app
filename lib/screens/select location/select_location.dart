@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:food_app/components/button.dart';
 import 'package:food_app/enum/constants.dart';
 import 'package:food_app/utils/size_config.dart';
 
@@ -182,14 +183,12 @@ class _SelectLocationState extends State<SelectLocation> {
             SizedBox(
               height: getProportionateScreenHeight(40.0),
             ),
-            SizedBox(
-                height: getProportionateScreenHeight(67.0),
-                width: double.infinity,
-                child: TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/login');
-                    },
-                    child: Text('Submit')))
+            DefaultButton(
+              text: 'Submit',
+              press: () {
+                Navigator.pushNamed(context, '/login');
+              },
+            )
           ],
         ),
       ),

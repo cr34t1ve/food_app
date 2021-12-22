@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:food_app/screens/log%20in/login.dart';
 import 'package:food_app/screens/number/number.dart';
 import 'package:food_app/screens/onboarding/onboarding.dart';
@@ -35,7 +36,8 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           fontFamily: 'Gilroy',
           appBarTheme: AppBarTheme(
-              brightness: Brightness.light,
+              systemOverlayStyle: SystemUiOverlayStyle.light,
+              // brightness: Brightness.light,
               backgroundColor: Colors.white,
               elevation: 0.0),
           textButtonTheme: TextButtonThemeData(
@@ -52,6 +54,10 @@ class MyApp extends StatelessWidget {
                   fontSize: getProportionateScreenWidth(26.0),
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF181725)),
+              headline3: TextStyle(
+                  fontSize: getProportionateScreenWidth(18.0),
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFFFFF9FF)),
               headline4: TextStyle(
                   fontSize: getProportionateScreenWidth(16.0),
                   fontWeight: FontWeight.w700,
