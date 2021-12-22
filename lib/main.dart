@@ -5,6 +5,7 @@ import 'package:food_app/screens/number/number.dart';
 import 'package:food_app/screens/onboarding/onboarding.dart';
 import 'package:food_app/screens/select%20location/select_location.dart';
 import 'package:food_app/screens/sign%20in/sign_in.dart';
+import 'package:food_app/screens/sign%20up/signup.dart';
 import 'package:food_app/screens/splash/splash.dart';
 import 'package:food_app/screens/verification/verification.dart';
 import 'package:food_app/utils/size_config.dart';
@@ -37,7 +38,6 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Gilroy',
           appBarTheme: AppBarTheme(
               systemOverlayStyle: SystemUiOverlayStyle.light,
-              // brightness: Brightness.light,
               backgroundColor: Colors.white,
               elevation: 0.0),
           textButtonTheme: TextButtonThemeData(
@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF181725)))),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/login',
+      initialRoute: '/signup',
       routes: {
         '/': (context) => Splash(),
         '/onboarding': (context) => Onboarding(),
@@ -80,6 +80,7 @@ class MyApp extends StatelessWidget {
         '/verification': (context) => Verification(),
         '/selectlocation': (context) => SelectLocation(),
         '/login': (context) => Login(),
+        '/signup': (context) => SignUp(),
       },
     );
   }
