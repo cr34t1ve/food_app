@@ -11,7 +11,11 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  bool isVisible = true;
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  bool _isVisible = true;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -68,6 +72,7 @@ class _LoginState extends State<Login> {
               ),
               TextField(
                 keyboardType: TextInputType.emailAddress,
+                controller: _emailController,
                 decoration: InputDecoration(
                     border: UnderlineInputBorder(),
                     hintText: 'imshuvo97@gmail.com',
@@ -79,13 +84,14 @@ class _LoginState extends State<Login> {
               Row(
                 children: [
                   Text(
-                    'Email',
+                    'Password',
                     style: Theme.of(context).textTheme.bodyText1,
                   )
                 ],
               ),
               TextField(
-                obscureText: isVisible,
+                obscureText: _isVisible,
+                controller: _passwordController,
                 decoration: InputDecoration(
                     border: UnderlineInputBorder(),
                     hintText: '. . . . . . . .',
@@ -93,11 +99,11 @@ class _LoginState extends State<Login> {
                     suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
-                          isVisible = !isVisible;
+                          _isVisible = !_isVisible;
                         });
                       },
                       color: Color(0xFF7C7C7C),
-                      icon: Icon(isVisible
+                      icon: Icon(_isVisible
                           ? Icons.visibility_off_outlined
                           : Icons.remove_red_eye_outlined),
                     )),
