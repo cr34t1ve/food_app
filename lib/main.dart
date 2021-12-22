@@ -67,12 +67,25 @@ class MyApp extends StatelessWidget {
                   fontSize: getProportionateScreenWidth(16.0),
                   fontWeight: FontWeight.w700,
                   color: Color(0xFF7C7C7C)),
+              headline5: TextStyle(
+                  fontSize: getProportionateScreenWidth(14),
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF7C7C7C)),
               bodyText1: TextStyle(
                   fontSize: getProportionateScreenWidth(16.0),
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF7C7C7C)),
+              bodyText2: TextStyle(
+                  fontSize: getProportionateScreenWidth(18.0),
+                  fontWeight: FontWeight.w600,
+                  letterSpacing: 0.2,
+                  color: Color(0xFF181725)),
               subtitle1: TextStyle(
                   fontSize: getProportionateScreenWidth(14),
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF181725)),
+              subtitle2: TextStyle(
+                  fontSize: getProportionateScreenWidth(16.0),
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF181725)))),
       debugShowCheckedModeBanner: false,
