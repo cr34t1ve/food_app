@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:food_app/screens/home/home.dart';
 import 'package:food_app/screens/log%20in/login.dart';
 import 'package:food_app/screens/number/number.dart';
 import 'package:food_app/screens/onboarding/onboarding.dart';
@@ -71,7 +72,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF181725)))),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/signup',
+      initialRoute: '/home',
       routes: {
         '/': (context) => Splash(),
         '/onboarding': (context) => Onboarding(),
@@ -81,6 +82,7 @@ class MyApp extends StatelessWidget {
         '/selectlocation': (context) => SelectLocation(),
         '/login': (context) => Login(),
         '/signup': (context) => SignUp(),
+        '/home': (context) => Home()
       },
     );
   }
