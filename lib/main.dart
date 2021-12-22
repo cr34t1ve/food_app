@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.white,
           fontFamily: 'Gilroy',
           appBarTheme: AppBarTheme(
-              systemOverlayStyle: SystemUiOverlayStyle.light,
+              systemOverlayStyle: SystemUiOverlayStyle.dark,
               backgroundColor: Colors.white,
               elevation: 0.0),
           textButtonTheme: TextButtonThemeData(
@@ -53,6 +53,10 @@ class MyApp extends StatelessWidget {
           textTheme: TextTheme(
               headline1: TextStyle(
                   fontSize: getProportionateScreenWidth(26.0),
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF181725)),
+              headline2: TextStyle(
+                  fontSize: getProportionateScreenWidth(24.0),
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF181725)),
               headline3: TextStyle(
