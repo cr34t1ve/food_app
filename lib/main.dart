@@ -71,6 +71,10 @@ class MyApp extends StatelessWidget {
                   fontSize: getProportionateScreenWidth(14),
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF7C7C7C)),
+              headline6: TextStyle(
+                  fontSize: getProportionateScreenWidth(20),
+                  fontWeight: FontWeight.w600,
+                  color: Color(0xFF3E423F)),
               bodyText1: TextStyle(
                   fontSize: getProportionateScreenWidth(16.0),
                   fontWeight: FontWeight.w600,

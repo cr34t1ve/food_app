@@ -8,10 +8,10 @@ class QuickOrderCard extends StatefulWidget {
       this.backgroundColor,
       this.price,
       this.stateSetter,
-      this.vehicle})
+      this.name})
       : super(key: key);
   final String? image;
-  final String? vehicle;
+  final String? name;
   final double? price;
   final Color? backgroundColor;
   final VoidCallback? stateSetter;
@@ -41,7 +41,7 @@ class _QuickOrderCardState extends State<QuickOrderCard> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                'assets/images/banana.png',
+                widget.image!,
                 width: getProportionateScreenWidth(100.0),
                 height: getProportionateScreenHeight(80.0),
               )
@@ -53,7 +53,7 @@ class _QuickOrderCardState extends State<QuickOrderCard> {
           Row(
             children: [
               Text(
-                'Organic Bananas',
+                widget.name!,
                 style: Theme.of(context).textTheme.subtitle2,
               )
             ],
@@ -82,7 +82,7 @@ class _QuickOrderCardState extends State<QuickOrderCard> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Text(
-                        '\$4.99',
+                        '\¢${widget.price!}',
                         style: Theme.of(context).textTheme.bodyText2,
                       ),
                     ],
