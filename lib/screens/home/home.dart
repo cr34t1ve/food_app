@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:food_app/components/carousel.dart';
+import 'package:food_app/components/groceries_card.dart';
 import 'package:food_app/components/quickOrderCard.dart';
 import 'package:food_app/enum/constants.dart';
 import 'package:food_app/utils/size_config.dart';
@@ -176,7 +177,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   Container(
                     height: getProportionateScreenHeight(250),
                     child: ListView.separated(
-                      padding: EdgeInsets.only(left: 30.0),
+                      padding: EdgeInsets.only(left: getProportionateScreenWidth(25.0)),
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemCount: 3,
@@ -222,7 +223,7 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   Container(
                     height: getProportionateScreenHeight(250),
                     child: ListView.separated(
-                      padding: EdgeInsets.only(left: 30.0),
+                      padding: EdgeInsets.only(left: getProportionateScreenWidth(25.0)),
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemCount: 3,
@@ -268,32 +269,39 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
                   Container(
                     height: getProportionateScreenHeight(105),
                     child: ListView.separated(
-                      padding: EdgeInsets.only(left: 30.0),
+                      padding: EdgeInsets.only(left: getProportionateScreenWidth(25.0)),
                       shrinkWrap: true,
                       scrollDirection: Axis.horizontal,
                       itemCount: 3,
                       itemBuilder: (context, index) {
-                        return Container(
-                          width: getProportionateScreenWidth(238.0),
-                          height: getProportionateScreenHeight(105),
-                          padding: EdgeInsets.symmetric(vertical: getProportionateScreenHeight(17.0), horizontal: getProportionateScreenWidth(17.0)),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(18),
-                            color: Color(0xFFFEEFE0)
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Image.asset('assets/images/pulses.png'),
-                              SizedBox(
-                                width: getProportionateScreenWidth(15.0),
-                              ),
-                              Text(
-                                'Pulses',
-                                style: Theme.of(context).textTheme.headline6,
-                              )
-                            ],
-                          ),
+                        return GroceriesCard(
+                          title: groceries[index]['name'],
+                          image: groceries[index]['image'],
+                          color: groceries[index]['backgroundColor'],
+                        );
+                      },
+                      separatorBuilder: (context, index) {
+                        return SizedBox(
+                          width: 15.0,
+                        );
+                      },
+                    ),
+                  ),
+                  SizedBox(
+                    height: getProportionateScreenHeight(20.0),
+                  ),
+                  Container(
+                    height: getProportionateScreenHeight(250),
+                    child: ListView.separated(
+                      padding: EdgeInsets.only(left: getProportionateScreenWidth(25.0)),
+                      shrinkWrap: true,
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 3,
+                      itemBuilder: (context, index) {
+                        return QuickOrderCard(
+                          image: groceriesQuickOrder[index]['image'],
+                          name: groceriesQuickOrder[index]['name'],
+                          price: groceriesQuickOrder[index]['price'],
                         );
                       },
                       separatorBuilder: (context, index) {
@@ -322,3 +330,5 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
     );
   }
 }
+
+

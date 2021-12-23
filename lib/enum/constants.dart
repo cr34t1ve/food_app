@@ -83,3 +83,24 @@ List<Map> groceries = [
     'backgroundColor': Color(0xFFFEEFE0)
   },
 ];
+
+List<Map> groceriesQuickOrder = [
+  {
+    "image": "assets/images/beef bone.png",
+    'price': 7.99,
+    'name': 'Beef Bone',
+    'backgroundColor': Color(0xFFFEEFE0)
+  },
+  {
+    "image": "assets/images/broiler chicken.png",
+    'price': 2.99,
+    'name': 'Broiler Chicken',
+    'backgroundColor': Color(0xFFE1F1E7)
+  },
+  {
+    "image": "assets/images/beef bone.png",
+    'price': 5.99,
+    'name': 'Beef Bone',
+    'backgroundColor': Color(0xFFFEEFE0)
+  },
+];
