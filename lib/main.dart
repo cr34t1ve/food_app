@@ -4,6 +4,7 @@ import 'package:food_app/screens/home/home.dart';
 import 'package:food_app/screens/log%20in/login.dart';
 import 'package:food_app/screens/number/number.dart';
 import 'package:food_app/screens/onboarding/onboarding.dart';
+import 'package:food_app/screens/product%20detail/product_detail.dart';
 import 'package:food_app/screens/select%20location/select_location.dart';
 import 'package:food_app/screens/sign%20in/sign_in.dart';
 import 'package:food_app/screens/sign%20up/signup.dart';
@@ -93,7 +94,7 @@ class MyApp extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                   color: Color(0xFF181725)))),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/home',
+      initialRoute: '/productdetail',
       routes: {
         '/': (context) => Splash(),
         '/onboarding': (context) => Onboarding(),
@@ -103,7 +104,8 @@ class MyApp extends StatelessWidget {
         '/selectlocation': (context) => SelectLocation(),
         '/login': (context) => Login(),
         '/signup': (context) => SignUp(),
-        '/home': (context) => Home()
+        '/home': (context) => Home(),
+        '/productdetail': (context) => ProductDetail(),
       },
     );
   }
